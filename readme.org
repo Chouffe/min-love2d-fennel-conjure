@@ -1,8 +1,8 @@
-* Minimal Fennel Love2D Setup
+* Minimal Fennel Love2D Setup for Neovim and Conjure
 
-In the lead up to the semi-annual [[https://itch.io/jam/autumn-lisp-game-jam-2018][Autumn Lisp Game Jam]] I thought I'd look into Phil Hegelberg's approach to last Aprils Jam, using [[https://love2d.org/][love2d]] in concert with [[https://fennel-lang.org/][fennel]]. Phil outlines his approach on his [[https://technomancy.us/187][blog]].
+This repo contains the minimal viable setup to get started with Phil Hegelberg's game design process, plus some additional libraries. It makes it possible to develop with Neovim and Conjure using a REPL that is connected to the game process.
 
-This repo contains the minimal viable setup to get started with Phil Hegelberg's game design process, plus some additional libraries.
+Most of the code is taken from: https://gitlab.com/alexjgriffith/min-love2d-fennel
 
 * Getting Started
 The following commands will clone this project and duplicate its structure into a new folder =$PROJECT_NAME=
@@ -41,10 +41,14 @@ love.conf = function(t)
 end
 #+END_SRC
 
-* Emacs Setup
+* Neovim Setup
 
-Once you install the latest version of [[https://gitlab.com/technomancy/fennel-mode][fennel-mode]], you can run
-=C-u M-x fennel-repl= followed by =love .= to launch a repl.
+Install the following dependencies:
+* nvim-local-fennel
+* aniseed
+
+Open `mode-intro.fnl` and Conjure should automatically start a game process and a REPL.
+Evaluate some of the comment sections to switch between modes and inpsect the game state.
 
 * Default Project Structure
 
