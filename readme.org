@@ -44,8 +44,8 @@ end
 * Neovim Setup
 
 Install the following dependencies:
-* nvim-local-fennel
-* aniseed
+- nvim-local-fennel
+- aniseed
 
 Open `mode-intro.fnl` and Conjure should automatically start a game process and a REPL.
 Evaluate some of the comment sections to switch between modes and inpsect the game state.
