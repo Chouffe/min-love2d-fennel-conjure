@@ -49,6 +49,7 @@ Install the following dependencies:
 
 Open `mode-intro.fnl` and Conjure should automatically start a game process and a REPL.
 Evaluate some of the comment sections to switch between modes and inpsect the game state.
+One can press `r` when focussed on the game window and it will hot reload the current mode. Also, one can live reload from neovim by folling the instructions in the comment section at the bottom of core.fnl
 
 * Default Project Structure
 

@@ -1,27 +1,9 @@
-(import-macros {: incf} :sample-macros)
+(import-macros {: incf} :src.sample-macros)
 
 (var counter 0)
 (var time 0)
 
-(comment
-   counter)
-
-
 (local (major minor revision) (love.getVersion))
-
-(comment
-
-   ;; Getting the global variables for changing modes via the REPL
-   _G
-   (. _G :sm)
-   (. _G :modename)
-
-   ;; REPL for changing modes and threading data
-   (let [set-mode (. _G :sm)]
-      (set-mode :mode-two {:font-size 50}))
-
-   (let [set-mode (. _G :sm)]
-      (set-mode :mode-intro)))
 
 {:draw (fn draw [message]
          (local (w h _flags) (love.window.getMode))
@@ -43,6 +25,9 @@
               (love.graphics.setNewFont 30)
               (print "Activating"))
  :keypressed (fn keypressed [key set-mode]
-                (global sm set-mode)
-                (when (= key :escape) 
-                   (love.event.quit)))}
+                (if 
+                   (= key :escape)
+                   (love.event.quit)
+                   
+                   (or (= key :enter) (= key :return))
+                   (set-mode :two {:font-size 30})))}
